@@ -905,7 +905,6 @@
     <!-- Internal CSS Ends Here -->
 </head>
 <body>
-    <!-- Your HTML body content remains exactly the same -->
     <!-- Header & Navigation -->
 <header>
     <div class="container">
@@ -970,7 +969,7 @@
                     </div>
                 </div>
                 
-                <div>
+                  <div>
                     <!-- MCET Image -->
                     <img src="images/mcet.jpg" alt="Dr. Mahalingam College of Engineering and Technology Campus" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                     <p style="text-align: center; font-style: italic;">Dr. Mahalingam College of Engineering and Technology Campus</p>
@@ -989,22 +988,22 @@
                         <strong>Dr. Mahalingam College of Engineering and Technology</strong><br>
                         (An Autonomous Institution)<br>
                         (Accredited by NBA & NAAC)<br>
-                        Udamali Road, M.K.Patti (P.O)<br>
-                        Pollachi - 642 003<br>
-                        Tamil Nadu, India
+                        Udumalpet Road,<br>
+                        Pollachi,<br>
+                        Tamil Nadu 642003, India
                     </p>
                     
                     <div style="margin-top: 25px;">
                         <h4>Contact Information</h4>
-                        <p><i class="fas fa-phone"></i> Phone: +91 4259 236030 / 40 / 50</p>
-                        <p><i class="fas fa-fax"></i> Fax: 04259 - 236070</p>
-                        <p><i class="fas fa-globe"></i> Website: <a href="http://www.drmcet.ac.in" target="_blank">www.drmcet.ac.in</a></p>
+                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 4259 236030 / 40 / 50</p>
+                        <p><i class="fas fa-fax"></i> <strong>Fax:</strong> 04259 - 236070</p>
+                        <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="http://www.drmcet.ac.in" target="_blank">www.drmcet.ac.in</a></p>
                     </div>
                     
                     <div style="margin-top: 25px; background: linear-gradient(135deg, #f0f9ff, #e1f5fe); padding: 15px; border-radius: 8px;">
                         <h4><i class="fas fa-map-marker-alt"></i> Coordinates</h4>
-                        <p>Latitude: 10.7892° N</p>
-                        <p>Longitude: 77.0090° E</p>
+                        <p><strong>Latitude:</strong> 10.6558507° N</p>
+                        <p><strong>Longitude:</strong> 77.0363443° E</p>
                     </div>
                 </div>
                 
@@ -1013,7 +1012,7 @@
                     <div id="map" style="height: 400px; border-radius: 8px; margin-bottom: 15px;"></div>
                     
                     <!-- Map Controls -->
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div class="map-controls">
                         <button id="satelliteView" class="map-control-btn">
                             <i class="fas fa-satellite"></i> Satellite View
                         </button>
@@ -1026,7 +1025,8 @@
                     </div>
                     
                     <p style="text-align: center; margin-top: 10px;">
-                        <a href="https://maps.google.com/?q=Dr.+Mahalingam+College+of+Engineering+and+Technology,Pollachi,Tamil+Nadu" target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">
+                        <a href="https://www.google.com/maps/place/Dr.+Mahalingam+College+of+Engineering+and+Technology/@10.6558502,77.0178903,15z/data=!3m1!4b1!4m6!3m5!1s0x3ba8370d5cf1c86f:0x50220f1c97a228c5!8m2!3d10.6558507!4d77.0363443!16s%2Fm%2F0cr30qj?entry=ttu" 
+                           target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">
                             <i class="fas fa-map-pin"></i> Open in Google Maps
                         </a>
                     </p>
@@ -1163,8 +1163,8 @@
             }
         });
         
-        // Initialize the map with Dr. MCET location
-        const mcetLocation = [10.7892, 77.0090]; // Dr. MCET coordinates
+        // Initialize the map with CORRECT Dr. MCET location from Google Maps link
+        const mcetLocation = [10.6558507, 77.0363443]; // CORRECT Dr. MCET coordinates from Google Maps
         
         // Create map instance
         const map = L.map('map').setView(mcetLocation, 16);
@@ -1183,9 +1183,9 @@
         
         // Custom icon for Dr. MCET
         const mcetIcon = L.divIcon({
-            html: '<i class="fas fa-university" style="font-size: 28px; color: #e63946; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);"></i>',
-            iconSize: [32, 32],
-            iconAnchor: [16, 32],
+            html: '<div style="background: rgba(255, 255, 255, 0.9); border-radius: 50%; padding: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><i class="fas fa-university" style="font-size: 24px; color: #e63946;"></i></div>',
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
             className: 'custom-marker'
         });
         
@@ -1194,13 +1194,21 @@
         
         // Add popup with venue information
         marker.bindPopup(`
-            <div style="padding: 10px;">
-                <h3 style="margin: 0 0 10px 0; color: #003366;">Dr. Mahalingam College of Engineering and Technology</h3>
-                <p><strong>ICEAIISC'26 Conference Venue</strong></p>
-                <p>Udamali Road, M.K.Patti (P.O)<br>
-                Pollachi - 642 003, Tamil Nadu</p>
-                <p><i class="fas fa-phone"></i> +91 4259 236030</p>
-                <a href="https://maps.google.com/?q=10.7892,77.0090" target="_blank" style="color: #e63946; text-decoration: none;">
+            <div style="padding: 10px; max-width: 300px;">
+                <h3 style="margin: 0 0 10px 0; color: #003366; font-size: 1.1rem;">Dr. Mahalingam College of Engineering and Technology</h3>
+                <p style="margin: 0 0 8px 0; font-weight: 600; color: #e63946;">ICEAISC'26 Conference Venue</p>
+                <p style="margin: 0 0 8px 0; font-size: 0.9rem;">
+                    Udumalpet Road,<br>
+                    Pollachi<br>
+                    Tamil Nadu 642003
+                </p>
+                <div style="display: flex; align-items: center; gap: 5px; margin: 8px 0;">
+                    <i class="fas fa-phone" style="color: #0066cc;"></i>
+                    <span style="font-size: 0.9rem;">+91 4259 236030</span>
+                </div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=10.6558507,77.0363443" 
+                   target="_blank" 
+                   style="display: inline-flex; align-items: center; gap: 5px; color: #e63946; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-top: 5px;">
                     <i class="fas fa-directions"></i> Get Directions
                 </a>
             </div>
@@ -1213,6 +1221,19 @@
             fillOpacity: 0.1,
             radius: 100
         }).addTo(map);
+        
+        // Add a rectangle to show the campus area
+        const campusBounds = [
+            [10.6545, 77.0350], // Southwest corner
+            [10.6570, 77.0380]  // Northeast corner
+        ];
+        
+        L.rectangle(campusBounds, {
+            color: '#e63946',
+            weight: 2,
+            fillColor: '#e63946',
+            fillOpacity: 0.05
+        }).addTo(map).bindTooltip("Dr. MCET Campus Area", {permanent: false, direction: 'top'});
         
         // Map control buttons functionality
         let currentLayer = 'street';
@@ -1241,7 +1262,7 @@
         });
         
         document.getElementById('streetView').addEventListener('click', function() {
-            // For street view, we'll zoom in closer
+            // Zoom in closer for street view
             map.setView(mcetLocation, 18);
             this.style.background = 'linear-gradient(135deg, #2a9d8f, #4cc9b0)';
             setTimeout(() => {
@@ -1250,7 +1271,7 @@
         });
         
         document.getElementById('getDirections').addEventListener('click', function() {
-            window.open(`https://www.google.com/maps/dir/?api=1&destination=${mcetLocation[0]},${mcetLocation[1]}`, '_blank');
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${mcetLocation[0]},${mcetLocation[1]}&destination_place_id=ChIJQ7Fg87LQrjsRq6F6AVkU8v0`, '_blank');
             this.style.background = 'linear-gradient(135deg, #ff7e5f, #feb47b)';
             setTimeout(() => {
                 this.style.background = 'linear-gradient(135deg, #003366, #004080)';
@@ -1328,6 +1349,12 @@
             .custom-marker {
                 background: none;
                 border: none;
+            }
+            .leaflet-marker-icon {
+                transition: transform 0.3s ease;
+            }
+            .leaflet-marker-icon:hover {
+                transform: scale(1.2);
             }
         `;
         document.head.appendChild(style);
