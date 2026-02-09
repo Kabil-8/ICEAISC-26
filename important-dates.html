@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Dates | ICEAISC'26</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS Starts Here -->
+    <style>
+        /* ===== CSS RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #4da6ff, #0066cc);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #2c5282;
+            margin: 20px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #004d99;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .conference-name {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 2rem;
+        }
+        
+        .main-nav a {
+            color: #333;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0066cc;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #0066cc;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0066cc;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-content h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #4da6ff, #ff7e5f);
+        }
+        
+        .hero-content .location {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 0;
+        }
+        
+        /* ===== MAIN CONTENT SECTIONS ===== */
+        main {
+            padding: 60px 0;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .content-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-section:nth-child(even) {
+            background: linear-gradient(to right, #f8f9fa, white);
+        }
+        
+        /* ===== DATE LIST ===== */
+        .date-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .date-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #f5f7fa, #e4eaf2);
+            border-radius: 12px;
+            border-left: 5px solid #4da6ff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .date-list li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .date-list li:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .date-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.15);
+        }
+        
+        .date-event {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a365d;
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .date-value {
+            background: linear-gradient(135deg, #0066cc, #4da6ff);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .date-value::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+        
+        /* ===== TIMELINE OVERVIEW BOX ===== */
+        .content-section > div:nth-child(3) {
+            background: linear-gradient(135deg, #f0f9ff, #e1f5fe);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4da6ff;
+            margin-top: 30px;
+        }
+        
+        .content-section > div:nth-child(3) h3 {
+            color: #0066cc;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section > div:nth-child(3) i {
+            color: #0066cc;
+            font-size: 1.5rem;
+        }
+        
+        /* ===== COUNTDOWN SECTION ===== */
+        .content-section:nth-child(2) {
+            text-align: center;
+        }
+        
+        .content-section:nth-child(2) > div:first-child {
+            background: linear-gradient(135deg, #003366, #004080);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 51, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-section:nth-child(2) > div:first-child::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .content-section:nth-child(2) > div:first-child > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-section:nth-child(2) h3 {
+            color: white;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        #countdown {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s infinite alternate;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            to {
+                transform: scale(1.05);
+                text-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            }
+        }
+        
+        #countdown.expired {
+            background: linear-gradient(45deg, #ff4d4d, #ff0000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: none;
+        }
+        
+        .content-section:nth-child(2) p:last-child {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 0;
+        }
+        
+        /* ===== CTA BUTTONS ===== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 126, 95, 0.6);
+            color: white;
+        }
+        
+        .cta-button:nth-child(2) {
+            background: linear-gradient(to right, #003366, #004d99);
+            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+        }
+        
+        .cta-button:nth-child(2):hover {
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.6);
+        }
+        
+        /* ===== TWO COLUMNS LAYOUT ===== */
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .two-columns ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .two-columns ul li {
+            position: relative;
+            padding: 10px 0 10px 35px;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .two-columns ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .two-columns ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #4da6ff, #0066cc);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        /* ===== NO EXTENSION BOX ===== */
+        .content-section > div:last-child {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff9800;
+            margin-top: 30px;
+            animation: warningPulse 2s infinite;
+        }
+        
+        @keyframes warningPulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(255, 152, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(255, 152, 0, 0.3);
+            }
+        }
+        
+        .content-section > div:last-child h3 {
+            color: #ff6f00;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section > div:last-child i {
+            color: #ff6f00;
+            font-size: 1.5rem;
+        }
+        
+        /* ===== SECTION TITLE CENTERING ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #4da6ff;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+        
+        .footer-section i {
+            color: #4da6ff;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .date-event {
+                font-size: 1.1rem;
+            }
+            
+            .date-value {
+                min-width: 180px;
+                padding: 10px 20px;
+            }
+            
+            #countdown {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .date-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            
+            .date-event {
+                padding-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .date-value {
+                align-self: flex-start;
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            #countdown {
+                font-size: 2.8rem;
+            }
+            
+            .content-section:nth-child(2) > div:last-child {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                margin: 10px 0;
+                display: block;
+                text-align: center;
+            }
+            
+            .cta-button + .cta-button {
+                margin-left: 0;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-section {
+                padding: 25px 20px;
+            }
+            
+            .date-list li {
+                padding: 18px;
+            }
+            
+            .date-event {
+                font-size: 1rem;
+            }
+            
+            .date-value {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            
+            #countdown {
+                font-size: 2.2rem;
+                margin: 20px 0;
+            }
+            
+            .content-section:nth-child(2) > div:first-child {
+                padding: 30px 20px;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        /* ===== ADDITIONAL ENHANCEMENTS ===== */
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0066cc, #4da6ff);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #004d99, #0066cc);
+        }
+        
+        /* Print styles */
+        @media print {
+            .menu-toggle, .hero-content h2::after, .cta-button {
+                display: none;
+            }
+            
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            .hero {
+                background: white !important;
+                color: black;
+                padding: 20px 0;
+            }
+            
+            .hero-content h2 {
+                color: black;
+            }
+            
+            .date-list li {
+                border: 1px solid #ddd;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            
+            #countdown {
+                border: 2px solid #ddd;
+                padding: 20px;
+                background: white !important;
+                color: black !important;
+                -webkit-background-clip: border-box !important;
+                background-clip: border-box !important;
+            }
+            
+            footer {
+                background: white !important;
+                color: black;
+            }
+            
+            .footer-section h3, .footer-section p {
+                color: black;
+            }
+        }
+        
+        /* Hover effect for content sections */
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient text effect for section titles */
+        .section-title {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        }
+        
+        /* Animation for date list items */
+        .date-list li {
+            animation: fadeInRight 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Urgent styling for near-deadline dates */
+        .urgent .date-value {
+            background: linear-gradient(135deg, #ff4d4d, #ff0000);
+            animation: urgentPulse 1s infinite;
+        }
+        
+        @keyframes urgentPulse {
+            0%, 100% {
+                box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+            }
+            50% {
+                box-shadow: 0 5px 20px rgba(255, 77, 77, 0.5);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .date-event {
+                font-size: 0.95rem;
+            }
+            
+            .date-value {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+            
+            #countdown {
+                font-size: 1.8rem;
+            }
+            
+            .content-section:nth-child(2) > div:first-child {
+                padding: 20px 15px;
+            }
+            
+            .content-section:nth-child(2) h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <!-- Internal CSS Ends Here -->
+</head>
+<body>
+    <!-- Your HTML body content remains exactly the same -->
+    <!-- Header & Navigation -->
+<header>
+    <div class="container">
+        <div class="main-header">
+            <div class="header-banner">
+                <div class="logo">
+                    <h1><span class="conference-name">ICEAISC'26</span></h1>
+                </div>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="committee.html">Committee</a></li>
+                    <li><a href="call-for-papers.html">Call for Papers</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="important-dates.html">Important Dates</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                    <li><a href="venue.html">Venue</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <!-- Page Title -->
+   <section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2>IMPORTANT DATES</h2>
+            <p class="location">Key deadlines for ICEAISC'26</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Key Dates -->
+        <section class="content-section">
+            <h2 class="section-title">Conference Timeline</h2>
+            <p>Mark your calendars with these important deadlines for ICEAISC'26. All deadlines are at 11:59 PM Indian Standard Time (IST).</p>
+            
+            <ul class="date-list">
+                <li>
+                    <span class="date-event">Last date for Full Paper Submission</span>
+                    <span class="date-value">March 3, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Intimation of Acceptance</span>
+                    <span class="date-value">March 14, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Camera Ready Paper & Registration Deadline</span>
+                    <span class="date-value">March 20, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Conference Dates</span>
+                    <span class="date-value">March 26-27, 2026</span>
+                </li>
+            </ul>
+            
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e1f5fe); padding: 20px; border-radius: 8px; margin-top: 30px;">
+                <h3><i class="fas fa-clock"></i> Timeline Overview</h3>
+                <p>Authors are encouraged to submit their papers well before the deadline to allow time for any technical issues. The review process will begin immediately after submission, with notifications sent by March 14, 2026.</p>
+            </div>
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="content-section">
+            <h2 class="section-title">Countdown to Paper Submission Deadline</h2>
+            
+            <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #003366, #004080); color: white; border-radius: 8px;">
+                <h3>Days until paper submission deadline</h3>
+                <div id="countdown" style="font-size: 3rem; font-weight: bold; margin: 20px 0; font-family: monospace;">
+                    Loading...
+                </div>
+                <p>Deadline: March 3, 2026 (11:59 PM IST)</p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; margin-top: 30px;">
+                <a href="submission.html" class="cta-button" style="margin-right: 15px;">
+                    <i class="fas fa-paper-plane"></i> Submit Your Paper
+                </a>
+                <a href="call-for-papers.html" class="cta-button" style="background: linear-gradient(to right, #003366, #004d99);">
+                    <i class="fas fa-file-alt"></i> Call for Papers
+                </a>
+            </div>
+        </section>
+
+        <!-- Late Submission Policy -->
+        <section class="content-section">
+            <h2 class="section-title">Submission Policy</h2>
+            
+            <div class="two-columns">
+                <div>
+                    <h3>Regular Submissions</h3>
+                    <ul>
+                        <li>All papers must be submitted by March 3, 2026</li>
+                        <li>Early submission is encouraged</li>
+                        <li>Confirmation email will be sent within 3 working days</li>
+                        <li>Review results by March 14, 2026</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>After Acceptance</h3>
+                    <ul>
+                        <li>Camera-ready paper due: March 20, 2026</li>
+                        <li>Registration deadline: March 20, 2026</li>
+                        <li>At least one author must register per paper</li>
+                        <li>Registration is mandatory for inclusion in proceedings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #fff8e1, #ffecb3); padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #ff9800;">
+                <h3><i class="fas fa-exclamation-circle"></i> No Deadline Extensions</h3>
+                <p>The submission deadline is firm and will not be extended. Authors are advised to plan their submissions accordingly to avoid last-minute technical issues.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ICEAISC'26</h3>
+                    <p>International Conference on Edge AI, Intelligent Analytics, and Smart Computing</p>
+                    <p>March 26-27, 2026</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology, Pollachi, Tamil Nadu, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> iceaisc26@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8610018853</p>
+                    <p><i class="fas fa-user"></i> Mr. K. Prabhu (Organizing Secretary)</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Organized By</h3>
+                    <p>Department of Computer Science and Engineering</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ICEAISC'26. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+        
+        // Add smooth scroll to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    
+                    // Animate date list items with delay
+                    const dateItems = entry.target.querySelectorAll('.date-list li');
+                    dateItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.2}s`;
+                    });
+                    
+                    // Animate two-columns list items
+                    const listItems = entry.target.querySelectorAll('.two-columns li');
+                    listItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add active class to current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.main-nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+        
+        // Enhanced Countdown Timer with accurate calculation
+        function updateCountdown() {
+            const deadlineDate = new Date('March 3, 2026 23:59:59');
+            
+            // Set to Indian Standard Time (IST = UTC+5:30)
+            const istOffset = 5.5 * 60 * 60 * 1000; // 5 hours 30 minutes in milliseconds
+            const deadline = deadlineDate.getTime() - istOffset;
+            
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+            
+            const countdownElement = document.getElementById('countdown');
+            
+            if (timeLeft < 0) {
+                countdownElement.innerHTML = "SUBMISSION CLOSED";
+                countdownElement.classList.add('expired');
+                return;
+            }
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Format display
+            if (days > 30) {
+                countdownElement.innerHTML = `${days} DAYS`;
+            } else if (days > 7) {
+                countdownElement.innerHTML = `${days} DAYS ${hours}H`;
+            } else if (days > 0) {
+                countdownElement.innerHTML = `${days}D ${hours}H ${minutes}M`;
+                countdownElement.style.fontSize = '3rem';
+                
+                // Add urgent class if less than 3 days
+                if (days < 3) {
+                    countdownElement.classList.add('urgent');
+                } else {
+                    countdownElement.classList.remove('urgent');
+                }
+            } else {
+                countdownElement.innerHTML = `${hours}H ${minutes}M ${seconds}S`;
+                countdownElement.style.fontSize = '2.5rem';
+                countdownElement.classList.add('urgent');
+            }
+            
+            // Add date list urgent styling for near deadlines
+            const dateItems = document.querySelectorAll('.date-list li');
+            const today = new Date();
+            const submissionDate = new Date('March 3, 2026');
+            const daysUntilDeadline = Math.floor((submissionDate - today) / (1000 * 60 * 60 * 24));
+            
+            if (daysUntilDeadline < 30) {
+                dateItems[0].classList.add('urgent');
+            }
+        }
+        
+        // Initialize countdown and update every second
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Add hover effects to date list items
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateItems = document.querySelectorAll('.date-list li');
+            
+            dateItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(15px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0) scale(1)';
+                });
+            });
+            
+            // Add click effect for CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.5);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${y}px;
+                        left: ${x}px;
+                    `;
+                    
+                    this.appendChild(ripple);
+                    
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+        
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

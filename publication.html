@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication Opportunities | ICEAISC'26</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS Starts Here -->
+    <style>
+        /* ===== CSS RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #4da6ff, #0066cc);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #2c5282;
+            margin: 20px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #004d99;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .conference-name {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 2rem;
+        }
+        
+        .main-nav a {
+            color: #333;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0066cc;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #0066cc;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0066cc;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-content h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #4da6ff, #ff7e5f);
+        }
+        
+        .hero-content .location {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 0;
+        }
+        
+        /* ===== MAIN CONTENT SECTIONS ===== */
+        main {
+            padding: 60px 0;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .content-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-section:nth-child(even) {
+            background: linear-gradient(to right, #f8f9fa, white);
+        }
+        
+        /* ===== SELECTION CRITERIA BOX ===== */
+        .content-section > div:nth-child(2) {
+            background: linear-gradient(135deg, #f0f9ff, #e1f5fe);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4da6ff;
+            margin: 25px 0;
+        }
+        
+        .content-section > div:nth-child(2) h3 {
+            color: #0066cc;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section > div:nth-child(2) i {
+            color: #0066cc;
+            font-size: 1.5rem;
+        }
+        
+        .content-section > div:nth-child(2) ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .content-section > div:nth-child(2) li {
+            position: relative;
+            padding: 10px 0 10px 35px;
+            margin-bottom: 8px;
+        }
+        
+        .content-section > div:nth-child(2) li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #4da6ff, #0066cc);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        /* ===== TWO COLUMNS LAYOUT ===== */
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        /* ===== JOURNAL CARDS ===== */
+        .two-columns > div {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .two-columns > div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .two-columns > div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .two-columns > div:nth-child(1) {
+            border-top-color: #003366;
+        }
+        
+        .two-columns > div:nth-child(2) {
+            border-top-color: #e63946;
+        }
+        
+        .two-columns h3 {
+            color: #1a365d;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            min-height: 70px;
+        }
+        
+        .two-columns p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        /* ===== JOURNAL TAGS ===== */
+        .area-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #1a365d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(77, 166, 255, 0.2);
+        }
+        
+        .area-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 102, 204, 0.15);
+            background: linear-gradient(135deg, #bbdefb, #90caf9);
+        }
+        
+        /* ===== IMPORTANT NOTE BOX ===== */
+        .content-section > div:nth-child(3) {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff9800;
+            margin-top: 30px;
+            animation: notePulse 3s infinite;
+        }
+        
+        @keyframes notePulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(255, 152, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(255, 152, 0, 0.3);
+            }
+        }
+        
+        .content-section > div:nth-child(3) h3 {
+            color: #ff6f00;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section > div:nth-child(3) i {
+            color: #ff6f00;
+            font-size: 1.5rem;
+        }
+        
+        /* ===== DATE LIST ===== */
+        .date-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .date-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f5f7fa, #e4eaf2);
+            border-radius: 10px;
+            border-left: 4px solid #4da6ff;
+            transition: all 0.3s ease;
+        }
+        
+        .date-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.1);
+        }
+        
+        .date-event {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a365d;
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .date-value {
+            background: linear-gradient(135deg, #0066cc, #4da6ff);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+        }
+        
+        /* ===== CTA BUTTON ===== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(to right, #003366, #004d99);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.6);
+            color: white;
+        }
+        
+        /* ===== ETHICS & COPYRIGHT ===== */
+        .two-columns ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .two-columns ul li {
+            position: relative;
+            padding: 10px 0 10px 35px;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .two-columns ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .two-columns ul li::before {
+            content: "•";
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            color: #0066cc;
+            font-size: 1.5rem;
+        }
+        
+        /* ===== PLAGIARISM POLICY BOX ===== */
+        .content-section > div:last-child {
+            background: linear-gradient(135deg, #f0f9ff, #e1f5fe);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .content-section > div:last-child strong {
+            color: #0066cc;
+            font-size: 1.1rem;
+        }
+        
+        /* ===== SECTION TITLE CENTERING ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #4da6ff;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+        
+        .footer-section i {
+            color: #4da6ff;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .two-columns {
+                gap: 30px;
+            }
+            
+            .date-event {
+                font-size: 1rem;
+            }
+            
+            .date-value {
+                min-width: 160px;
+                padding: 8px 15px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .date-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 18px;
+            }
+            
+            .date-event {
+                padding-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .date-value {
+                align-self: flex-start;
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-section {
+                padding: 25px 20px;
+            }
+            
+            .two-columns > div {
+                padding: 25px 20px;
+            }
+            
+            .two-columns h3 {
+                font-size: 1.3rem;
+                min-height: auto;
+            }
+            
+            .area-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+                margin-right: 8px;
+                margin-bottom: 8px;
+            }
+            
+            .date-list li {
+                padding: 15px;
+            }
+            
+            .date-event {
+                font-size: 0.95rem;
+            }
+            
+            .date-value {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        /* ===== ADDITIONAL ENHANCEMENTS ===== */
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0066cc, #4da6ff);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #004d99, #0066cc);
+        }
+        
+        /* Print styles */
+        @media print {
+            .menu-toggle, .hero-content h2::after, .cta-button {
+                display: none;
+            }
+            
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            .hero {
+                background: white !important;
+                color: black;
+                padding: 20px 0;
+            }
+            
+            .hero-content h2 {
+                color: black;
+            }
+            
+            .two-columns > div {
+                border: 1px solid #ddd;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            
+            .date-list li {
+                border: 1px solid #ddd;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            
+            footer {
+                background: white !important;
+                color: black;
+            }
+            
+            .footer-section h3, .footer-section p {
+                color: black;
+            }
+        }
+        
+        /* Hover effect for content sections */
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient text effect for section titles */
+        .section-title {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        }
+        
+        /* Animation for journal cards */
+        .two-columns > div {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animation for date list items */
+        .date-list li {
+            animation: fadeInRight 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Journal card hover effect enhancement */
+        .two-columns > div:hover::before {
+            height: 100%;
+            opacity: 0.05;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .area-tag {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+            
+            .date-event {
+                font-size: 0.9rem;
+            }
+            
+            .date-value {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+            
+            .content-section > div:last-child {
+                padding: 15px;
+            }
+        }
+        
+        /* Styling for journal ISSN numbers */
+        .area-tag:first-child {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            color: #2e7d32;
+        }
+        
+        /* Special styling for indexed tag */
+        .area-tag:nth-child(2) {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            color: #ef6c00;
+        }
+        
+        /* Special styling for peer-reviewed tag */
+        .area-tag:nth-child(3) {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            color: #7b1fa2;
+        }
+    </style>
+    <!-- Internal CSS Ends Here -->
+</head>
+<body>
+    <!-- Your HTML body content remains exactly the same -->
+<header>
+    <div class="container">
+        <div class="main-header">
+            <div class="header-banner">
+                <div class="logo">
+                    <h1><span class="conference-name">ICEAISC'26</span></h1>
+                </div>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="committee.html">Committee</a></li>
+                    <li><a href="call-for-papers.html">Call for Papers</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="important-dates.html">Important Dates</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                    <li><a href="venue.html">Venue</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <!-- Page Title -->
+  <section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2>PUBLICATION OPPORTUNITIES</h2>
+            <p class="location">Disseminating research from ICEAISC'26</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Publication Info -->
+        <section class="content-section">
+            <h2 class="section-title">Publication Process</h2>
+            
+            <p>All manuscripts submitted to ICEAISC'26 will undergo a rigorous peer-review process, ensuring the quality and integrity of the research presented. The review process is double-blind, with at least two independent reviewers evaluating each submission.</p>
+            
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e1f5fe); padding: 20px; border-radius: 8px; margin: 25px 0;">
+                <h3><i class="fas fa-award"></i> Selection Criteria</h3>
+                <p>Papers will be selected based on:</p>
+                <ul style="margin-top: 10px;">
+                    <li>Originality and novelty of the research</li>
+                    <li>Technical quality and correctness</li>
+                    <li>Clarity of presentation</li>
+                    <li>Relevance to conference themes</li>
+                    <li>Significance of results</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Journal Opportunities -->
+        <section class="content-section">
+            <h2 class="section-title">Publication Venues</h2>
+            
+            <p>Selected papers from ICEAISC'26 will be considered for publication in the regular or special issues of the following journals:</p>
+            
+            <div class="two-columns" style="margin-top: 30px;">
+                <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); border-top: 5px solid #003366;">
+                    <h3>Journal of Engineering and Technology for Industrial Applications</h3>
+                    <p>An interdisciplinary journal focusing on engineering applications and technological innovations for industrial advancement.</p>
+                    <div style="margin-top: 20px;">
+                        <span class="area-tag">ISSN: 2447-0228</span>
+                        <span class="area-tag">Indexed</span>
+                        <span class="area-tag">Peer-Reviewed</span>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); border-top: 5px solid #e63946;">
+                    <h3>Journal of Science and Technology Research</h3>
+                    <p>A multidisciplinary journal publishing original research in science and technology with broad applications.</p>
+                    <div style="margin-top: 20px;">
+                        <span class="area-tag">ISSN: 2630-3916</span>
+                        <span class="area-tag">Open Access</span>
+                        <span class="area-tag">Peer-Reviewed</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #fff8e1, #ffecb3); padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #ff9800;">
+                <h3><i class="fas fa-info-circle"></i> Important Note</h3>
+                <p>The papers will be processed as per the policies of the respective journals. Article Processing Charges (APC) may be applicable as per journal norms. Authors of selected papers will receive specific instructions regarding publication procedures after the conference.</p>
+            </div>
+        </section>
+
+        <!-- Publication Timeline -->
+        <section class="content-section">
+            <h2 class="section-title">Publication Timeline</h2>
+            
+            <ul class="date-list">
+                <li>
+                    <span class="date-event">Paper Submission Deadline</span>
+                    <span class="date-value">March 3, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Review Process</span>
+                    <span class="date-value">March 4-13, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Acceptance Notification</span>
+                    <span class="date-value">March 14, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Conference Presentation</span>
+                    <span class="date-value">March 26-27, 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Submission to Journals</span>
+                    <span class="date-value">April 2026</span>
+                </li>
+                <li>
+                    <span class="date-event">Expected Publication</span>
+                    <span class="date-value">June-August 2026</span>
+                </li>
+            </ul>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="submission.html" class="cta-button">
+                    <i class="fas fa-paper-plane"></i> Submit for Publication Consideration
+                </a>
+            </div>
+        </section>
+
+        <!-- Copyright & Ethics -->
+        <section class="content-section">
+            <h2 class="section-title">Publication Ethics & Copyright</h2>
+            
+            <div class="two-columns">
+                <div>
+                    <h3>Author Responsibilities</h3>
+                    <ul>
+                        <li>Ensure originality of the submitted work</li>
+                        <li>Properly cite all referenced works</li>
+                        <li>Disclose any conflicts of interest</li>
+                        <li>Participate in the peer review process</li>
+                        <li>Correct errors when discovered</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Copyright Policy</h3>
+                    <ul>
+                        <li>Authors retain copyright of their work</li>
+                        <li>Grant publishing rights to journal</li>
+                        <li>Allow sharing with proper attribution</li>
+                        <li>Follow Creative Commons licenses where applicable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #f0f9ff, #e1f5fe); padding: 20px; border-radius: 8px; margin-top: 30px;">
+                <p><strong>Plagiarism Policy:</strong> All submissions will be checked for plagiarism. Papers with significant overlap with previously published work will be rejected. The conference follows COPE (Committee on Publication Ethics) guidelines.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ICEAISC'26</h3>
+                    <p>International Conference on Edge AI, Intelligent Analytics, and Smart Computing</p>
+                    <p>March 26-27, 2026</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology, Pollachi, Tamil Nadu, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> iceaisc26@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8610018853</p>
+                    <p><i class="fas fa-user"></i> Mr. K. Prabhu (Organizing Secretary)</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Organized By</h3>
+                    <p>Department of Computer Science and Engineering</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ICEAISC'26. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+        
+        // Add smooth scroll to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    
+                    // Animate journal cards with delay
+                    const journalCards = entry.target.querySelectorAll('.two-columns > div');
+                    journalCards.forEach((card, index) => {
+                        card.style.animationDelay = `${index * 0.2}s`;
+                    });
+                    
+                    // Animate date list items
+                    const dateItems = entry.target.querySelectorAll('.date-list li');
+                    dateItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                    });
+                    
+                    // Animate list items in two-columns
+                    const listItems = entry.target.querySelectorAll('.two-columns li');
+                    listItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.05}s`;
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add active class to current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.main-nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+        
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Journal card hover effects
+            const journalCards = document.querySelectorAll('.two-columns > div');
+            journalCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                    const tags = this.querySelectorAll('.area-tag');
+                    tags.forEach(tag => {
+                        tag.style.transform = 'translateY(-2px)';
+                    });
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    const tags = this.querySelectorAll('.area-tag');
+                    tags.forEach(tag => {
+                        tag.style.transform = 'translateY(0)';
+                    });
+                });
+            });
+            
+            // Date list hover effects
+            const dateItems = document.querySelectorAll('.date-list li');
+            dateItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                    const dateValue = this.querySelector('.date-value');
+                    if (dateValue) {
+                        dateValue.style.transform = 'scale(1.05)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    const dateValue = this.querySelector('.date-value');
+                    if (dateValue) {
+                        dateValue.style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            // Area tag hover effects
+            const areaTags = document.querySelectorAll('.area-tag');
+            areaTags.forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) rotate(2deg)';
+                    this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.15)';
+                });
+                
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0)';
+                    this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                });
+            });
+            
+            // Add click effect for CTA button
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', function(e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.5);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${y}px;
+                        left: ${x}px;
+                    `;
+                    
+                    this.appendChild(ripple);
+                    
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            }
+        });
+        
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

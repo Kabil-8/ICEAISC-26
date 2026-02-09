@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizing Committee | ICEAISC'26</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS Starts Here -->
+    <style>
+        /* ===== CSS RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #4da6ff, #0066cc);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #004d99;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .conference-name {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 2rem;
+        }
+        
+        .main-nav a {
+            color: #333;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0066cc;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #0066cc;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0066cc;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-content h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #4da6ff, #ff7e5f);
+        }
+        
+        .hero-content .location {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 0;
+        }
+        
+        /* ===== MAIN CONTENT SECTIONS ===== */
+        main {
+            padding: 60px 0;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .content-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== COMMITTEE GRID ===== */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .committee-member {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .committee-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .member-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, #4da6ff, #0066cc);
+        }
+        
+        .member-details {
+            width: 100%;
+        }
+        
+        .member-role {
+            display: inline-block;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(255, 126, 95, 0.3);
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            color: #1a365d;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .member-affiliation {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+        
+        /* Different colors for different roles */
+        .committee-member:nth-child(1) .member-role {
+            background: linear-gradient(135deg, #003366, #004d99);
+        }
+        
+        .committee-member:nth-child(2) .member-role {
+            background: linear-gradient(135deg, #0066cc, #4da6ff);
+        }
+        
+        .committee-member:nth-child(3) .member-role {
+            background: linear-gradient(135deg, #2a9d8f, #4cc9b0);
+        }
+        
+        .committee-member:nth-child(4) .member-role {
+            background: linear-gradient(135deg, #e9c46a, #f4a261);
+        }
+        
+        .committee-member:nth-child(5) .member-role {
+            background: linear-gradient(135deg, #9d4edd, #c77dff);
+        }
+        
+        /* Role-specific styling */
+        [class*="patron"] .member-profile {
+            background: linear-gradient(135deg, #003366, #004d99);
+        }
+        
+        [class*="chairman"] .member-profile {
+            background: linear-gradient(135deg, #0066cc, #4da6ff);
+        }
+        
+        [class*="vice"] .member-profile {
+            background: linear-gradient(135deg, #2a9d8f, #4cc9b0);
+        }
+        
+        [class*="dean"] .member-profile {
+            background: linear-gradient(135deg, #e9c46a, #f4a261);
+        }
+        
+        [class*="convener"] .member-profile {
+            background: linear-gradient(135deg, #9d4edd, #c77dff);
+        }
+        
+        [class*="secretary"] .member-profile {
+            background: linear-gradient(135deg, #e63946, #ff6b6b);
+        }
+        
+        /* Ribbon effect for important roles */
+        .committee-member:nth-child(-n+2)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, transparent 50%, #ff7e5f 50%);
+            border-radius: 0 0 0 100%;
+        }
+        
+        .committee-member:nth-child(1)::before {
+            background: linear-gradient(135deg, transparent 50%, #ffd166 50%);
+        }
+        
+        .committee-member:nth-child(2)::before {
+            background: linear-gradient(135deg, transparent 50%, #06d6a0 50%);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #4da6ff;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+        
+        .footer-section i {
+            color: #4da6ff;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .committee-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .committee-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-section {
+                padding: 25px 20px;
+            }
+            
+            .committee-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .committee-member {
+                padding: 25px 15px;
+            }
+            
+            .member-profile {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        /* ===== ADDITIONAL ENHANCEMENTS ===== */
+        /* Section title centering for committee page */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Loading animation for committee cards */
+        .committee-member {
+            animation-delay: calc(var(--delay-index, 0) * 0.1s);
+        }
+        
+        /* Print styles */
+        @media print {
+            .menu-toggle, .hero-content h2::after {
+                display: none;
+            }
+            
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            .hero {
+                background: white !important;
+                color: black;
+                padding: 20px 0;
+            }
+            
+            .hero-content h2 {
+                color: black;
+            }
+            
+            .committee-member {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            footer {
+                background: white !important;
+                color: black;
+            }
+            
+            .footer-section h3, .footer-section p {
+                color: black;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0066cc, #4da6ff);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #004d99, #0066cc);
+        }
+        
+        /* Hover effects enhancement */
+        .committee-member:hover .member-profile {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .committee-member:hover .member-role {
+            transform: scale(1.05);
+        }
+        
+        /* Gradient border effect on hover */
+        .committee-member::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #4da6ff, #ff7e5f, #4da6ff);
+            border-radius: 14px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .committee-member:hover::after {
+            opacity: 1;
+        }
+        
+        /* Responsive adjustments for committee grid */
+        @media (min-width: 1200px) {
+            .committee-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .committee-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <!-- Internal CSS Ends Here -->
+</head>
+<body>
+    <!-- Your HTML body content remains exactly the same -->
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <div class="header-banner">
+                    <div class="logo">
+                        <h1><span class="conference-name">ICEAISC'26</span></h1>
+                    </div>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="important-dates.html">Important Dates</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="venue.html">Venue</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>ORGANIZING COMMITTEE</h2>
+                <p class="location">Meet the team behind ICEAISC'26</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Patron & Chairman -->
+        <section class="content-section">
+            <h2 class="section-title">Leadership</h2>
+            <div class="committee-grid">
+                <!-- Patron -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="S"></div>
+                    <div class="member-details">
+                        <div class="member-role">Patron</div>
+                        <h3 class="member-name">Dr. S.V. Subramanian</h3>
+                        <p class="member-affiliation">Secretary, NIA Educational Institution</p>
+                    </div>
+                </div>
+                
+                <!-- Chairman -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="P"></div>
+                    <div class="member-details">
+                        <div class="member-role">Chairman</div>
+                        <h3 class="member-name">Dr. P. Govindasamy</h3>
+                        <p class="member-affiliation">Principal, MCET</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Co-Chairmen -->
+        <section class="content-section">
+            <h2 class="section-title">Co-Chairmen</h2>
+            <div class="committee-grid">
+                <!-- Co-Chairman 1 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="A"></div>
+                    <div class="member-details">
+                        <div class="member-role">Vice Principal</div>
+                        <h3 class="member-name">Dr. A. Senthil Kumar</h3>
+                        <p class="member-affiliation">MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Co-Chairman 2 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="S"></div>
+                    <div class="member-details">
+                        <div class="member-role">Dean R & I</div>
+                        <h3 class="member-name">Dr. S. Ramakrishnan</h3>
+                        <p class="member-affiliation">MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Co-Chairman 3 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="K"></div>
+                    <div class="member-details">
+                        <div class="member-role">Associate Dean</div>
+                        <h3 class="member-name">Dr. K. Vijayakumar</h3>
+                        <p class="member-affiliation">MCET</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Convener & Co-Convenors -->
+        <section class="content-section">
+            <h2 class="section-title">Convener & Co-Convenors</h2>
+            <div class="committee-grid">
+                <!-- Convener -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="D"></div>
+                    <div class="member-details">
+                        <div class="member-role">Convener</div>
+                        <h3 class="member-name">Dr. D. Sivaganesan</h3>
+                        <p class="member-affiliation">Professor & HoD/CSE, MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Co-Convener 1 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="A"></div>
+                    <div class="member-details">
+                        <div class="member-role">Co-Convener</div>
+                        <h3 class="member-name">Dr. A. Noble Mary Juliet</h3>
+                        <p class="member-affiliation">Professor, CSE, MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Co-Convener 2 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="J"></div>
+                    <div class="member-details">
+                        <div class="member-role">Co-Convener</div>
+                        <h3 class="member-name">Dr. J. Bhavithra</h3>
+                        <p class="member-affiliation">ASP, CSE, MCET</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizing Secretaries -->
+        <section class="content-section">
+            <h2 class="section-title">Organizing Secretaries</h2>
+            <div class="committee-grid">
+                <!-- Secretary 1 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="K"></div>
+                    <div class="member-details">
+                        <div class="member-role">Organizing Secretary</div>
+                        <h3 class="member-name">Mr. K. Prabhu</h3>
+                        <p class="member-affiliation">AP (SS), CSE, MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Secretary 2 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="T"></div>
+                    <div class="member-details">
+                        <div class="member-role">Organizing Secretary</div>
+                        <h3 class="member-name">Mr. T. Kanagasabapathy</h3>
+                        <p class="member-affiliation">AP (SS), CSE, MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Secretary 3 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="C"></div>
+                    <div class="member-details">
+                        <div class="member-role">Organizing Secretary</div>
+                        <h3 class="member-name">Ms. C. Devipriya</h3>
+                        <p class="member-affiliation">AP (SS), CSE, MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Secretary 4 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="S"></div>
+                    <div class="member-details">
+                        <div class="member-role">Organizing Secretary</div>
+                        <h3 class="member-name">Mr. S. Senthil Prabhu</h3>
+                        <p class="member-affiliation">AP (SS), CSE, MCET</p>
+                    </div>
+                </div>
+                
+                <!-- Secretary 5 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="S"></div>
+                    <div class="member-details">
+                        <div class="member-role">Organizing Secretary</div>
+                        <h3 class="member-name">Ms. S. Divyapriya</h3>
+                        <p class="member-affiliation">AP, CSE, MCET</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ICEAISC'26</h3>
+                    <p>International Conference on Edge AI, Intelligent Analytics, and Smart Computing</p>
+                    <p>March 26-27, 2026</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology, Pollachi, Tamil Nadu, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> iceaisc26@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8610018853</p>
+                    <p><i class="fas fa-user"></i> Mr. K. Prabhu (Organizing Secretary)</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Organized By</h3>
+                    <p>Department of Computer Science and Engineering</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ICEAISC'26. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+        
+        // Add smooth scroll to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    
+                    // Animate committee members with delay
+                    const members = entry.target.querySelectorAll('.committee-member');
+                    members.forEach((member, index) => {
+                        member.style.setProperty('--delay-index', index);
+                        member.style.animationDelay = `${index * 0.1}s`;
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add active class to current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.main-nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+        
+        // Function to generate profile initials with colors
+        function generateProfileCards() {
+            const profileElements = document.querySelectorAll('.member-profile[data-initial]');
+            
+            const colorPalettes = [
+                'linear-gradient(135deg, #003366, #004d99)', // Dark Blue
+                'linear-gradient(135deg, #0066cc, #4da6ff)', // Blue
+                'linear-gradient(135deg, #2a9d8f, #4cc9b0)', // Teal
+                'linear-gradient(135deg, #e9c46a, #f4a261)', // Orange
+                'linear-gradient(135deg, #9d4edd, #c77dff)', // Purple
+                'linear-gradient(135deg, #e63946, #ff6b6b)', // Red
+                'linear-gradient(135deg, #2a9d8f, #4cc9b0)'  // Green
+            ];
+            
+            // Map initials to specific colors for consistency
+            const initialColors = {
+                'S': colorPalettes[0], // Dark Blue for S
+                'P': colorPalettes[1], // Blue for P
+                'A': colorPalettes[2], // Teal for A
+                'K': colorPalettes[3], // Orange for K
+                'D': colorPalettes[4], // Purple for D
+                'J': colorPalettes[5], // Red for J
+                'C': colorPalettes[6], // Green for C
+                'T': colorPalettes[3]  // Orange for T
+            };
+            
+            profileElements.forEach((profile, index) => {
+                const initial = profile.getAttribute('data-initial');
+                profile.textContent = initial;
+                
+                // Set color based on initial or use default
+                const bgColor = initialColors[initial] || colorPalettes[index % colorPalettes.length];
+                profile.style.background = bgColor;
+            });
+        }
+        
+        // Initialize profile cards when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            generateProfileCards();
+            
+            // Add hover effects to committee cards
+            document.querySelectorAll('.committee-member').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

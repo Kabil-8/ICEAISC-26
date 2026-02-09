@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICEAISC'26 | International Conference on Edge AI, Intelligent Analytics, and Smart Computing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS Starts Here -->
+    <style>
+        /* ===== CSS RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #4da6ff, #0066cc);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #004d99;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .conference-name {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 2rem;
+        }
+        
+        .main-nav a {
+            color: #333;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0066cc;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #0066cc;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0066cc;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .conference-title h1 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .conference-details p {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .conference-details p:last-child {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+        
+        .institution-banner img {
+            max-width: 900px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+        
+        .institution-banner img:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* ===== CTA BUTTON ===== */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+            color: white;
+        }
+        
+        /* ===== MAIN CONTENT SECTIONS ===== */
+        main {
+            padding: 60px 0;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .content-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-section:nth-child(even) {
+            background: linear-gradient(to right, #f8f9fa, white);
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .two-columns ul {
+            list-style: none;
+        }
+        
+        .two-columns li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .two-columns li:last-child {
+            border-bottom: none;
+        }
+        
+        .two-columns li strong {
+            color: #0066cc;
+            display: inline-block;
+            width: 180px;
+        }
+        
+        .two-columns a {
+            display: block;
+            padding: 8px 0;
+            font-weight: 500;
+        }
+        
+        .two-columns a:hover {
+            padding-left: 10px;
+            color: #ff7e5f;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #4da6ff;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+        
+        .footer-section i {
+            color: #4da6ff;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .conference-title {
+            animation-delay: 0.2s;
+        }
+        
+        .conference-details {
+            animation-delay: 0.4s;
+        }
+        
+        .cta-section {
+            animation-delay: 0.6s;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .conference-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .conference-title h1 {
+                font-size: 1.6rem;
+            }
+            
+            .conference-details p {
+                font-size: 1.3rem;
+            }
+            
+            .conference-details p:last-child {
+                font-size: 1.1rem;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .conference-title h1 {
+                font-size: 1.4rem;
+            }
+            
+            .conference-details p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ===== ADDITIONAL ENHANCEMENTS ===== */
+        /* Glow effect for important elements */
+        .glow {
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px rgba(77, 166, 255, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(77, 166, 255, 0.8);
+            }
+        }
+        
+        /* Hover effect for cards */
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Styling for dates and deadlines */
+        .important-date {
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0066cc, #4da6ff);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #004d99, #0066cc);
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 102, 204, 0.3);
+            border-radius: 50%;
+            border-top-color: #0066cc;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Print styles */
+        @media print {
+            .cta-button, .menu-toggle {
+                display: none;
+            }
+            
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            .hero {
+                background: white !important;
+                color: black;
+                padding: 20px 0;
+            }
+            
+            .conference-title h1 {
+                color: black;
+            }
+            
+            footer {
+                background: white !important;
+                color: black;
+            }
+            
+            .footer-section h3, .footer-section p {
+                color: black;
+            }
+        }
+    </style>
+    <!-- Internal CSS Ends Here -->
+</head>
+<body>
+    <!-- Your HTML body content remains exactly the same -->
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <div class="header-banner">
+                    <div class="logo">
+                        <h1><span class="conference-name">ICEAISC'26</span></h1>
+                    </div>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="important-dates.html">Important Dates</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="venue.html">Venue</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" style="text-align: center;">
+                <!-- Institutional Banner Image -->
+                <div class="institution-banner" style="margin-bottom: 40px; padding-bottom: 25px; border-bottom: 2px solid rgba(255, 255, 255, 0.2);">
+                    <img src="images/banner.jpeg" alt="Dr. Mahalingam College of Engineering and Technology" 
+                         style="max-width: 900px; width: 100%; height: auto; margin-bottom: 20px; border-radius: 8px;">
+                </div>
+                
+                <!-- Conference Title -->
+                <div class="conference-title" style="margin-bottom: 30px;">
+                    <h1 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 20px; line-height: 1.3;">
+                        International Conference on Edge AI, Intelligent Analytics, and Smart Computing
+                    </h1>
+                    <p style="font-size: 1.8rem; color: #4da6ff; font-weight: 600;">
+                        (ICEAIISC'26)
+                    </p>
+                </div>
+                
+                <!-- Conference Details -->
+                <div class="conference-details" style="margin-bottom: 40px;">
+                    <p style="font-size: 1.8rem; font-weight: 700; color: white; margin-bottom: 10px;">
+                        26-27 March 2026
+                    </p>
+                    <p style="font-size: 1.5rem; color: #cccccc;">
+                        Dr. Mahalingam College of Engineering and Technology, Pollachi, Tamil Nadu, India
+                    </p>
+                </div>
+                
+                <!-- Call-to-Action Button -->
+                <div class="cta-section">
+                    <a href="submission.html" class="cta-button">
+                        Submit Your Paper Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Conference -->
+        <section class="content-section">
+            <h2 class="section-title">About the Conference</h2>
+            <p>The International Conference on Edge AI, Intelligent Analytics, and Smart Computing (ICEAISC'26) is a premier global forum that brings together researchers, academicians, industry professionals, and practitioners to discuss recent advances, challenges, and future directions in intelligent computing technologies.</p>
+            <p>The conference aims to foster innovation and collaboration in the rapidly evolving domains of Edge Artificial Intelligence, data-driven intelligent analytics, and smart computing systems. ICEAISC'26 focuses on cutting-edge research that enables intelligence closer to data sources, enhances real-time decision-making, and supports scalable, efficient and secure smart systems.</p>
+        </section>
+
+        <!-- About Institution -->
+        <section class="content-section">
+            <h2 class="section-title">About the Institution</h2>
+            <p>Dr. Mahalingam College of Engineering and Technology (MCET) was established in 1998 by Dr. M. Manickam with a view to commemorate the 75th birth year of his beloved father Arutchelvar Dr. N. Mahalingam. The mission of the college is to impart high quality competency based education in Engineering & Technology to the younger generation with the required skills and abilities to face the challenging needs of the industry around the globe.</p>
+            <p>MCET is a self-financing, co-educational Autonomous Engineering College and it is approved by All India Council for Technical Education (AICTE), New Delhi & affiliated to Anna University, Chennai. The Institution has been accredited by the National Assessment and Accreditation Council (NAAC) with A++ grade. MCET currently offers 11 UG, 6 PG and 7 Doctoral programmes in Engineering and Technology.</p>
+        </section>
+
+        <!-- About Department -->
+        <section class="content-section">
+            <h2 class="section-title">About the Department</h2>
+            <p>The Department of CSE was established in the year 1998. It is accredited by National Board of Accreditation (NBA) under Tier 1 category. The department offers 4 years Bachelor of Engineering programme with an annual intake of 180 students and Master of Computer Science and Engineering course with an annual intake of 12 students.</p>
+            <p>The department has well qualified and committed faculty members. The department is recognized as research center for offering Ph.D. /M.S (by research) programmes and focuses on research activities in the areas of Data Science, Networks and Security, Artificial Intelligence, Machine Learning and Deep Learning.</p>
+        </section>
+
+        <!-- Quick Info -->
+        <section class="content-section">
+            <div class="two-columns">
+                <div>
+                    <h3 class="section-title">Conference At a Glance</h3>
+                    <ul>
+                        <li><strong>Dates:</strong> March 26-27, 2026</li>
+                        <li><strong>Location:</strong> MCET, Pollachi, Tamil Nadu</li>
+                        <li><strong>Paper Submission Deadline:</strong> March 3, 2026</li>
+                        <li><strong>Acceptance Notification:</strong> March 14, 2026</li>
+                        <li><strong>Registration Deadline:</strong> March 20, 2026</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="call-for-papers.html">Call for Papers &rarr;</a></li>
+                        <li><a href="submission.html">Submission Guidelines &rarr;</a></li>
+                        <li><a href="important-dates.html">Important Dates &rarr;</a></li>
+                        <li><a href="contact.html">Contact Us &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ICEAISC'26</h3>
+                    <p>International Conference on Edge AI, Intelligent Analytics, and Smart Computing</p>
+                    <p>March 26-27, 2026</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology, Pollachi, Tamil Nadu, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> iceaisc26@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8610018853</p>
+                    <p><i class="fas fa-user"></i> Mr. K. Prabhu (Organizing Secretary)</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Organized By</h3>
+                    <p>Department of Computer Science and Engineering</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology</p>
+                    <p>(An Autonomous Institution)</p>
+                    <p>Accredited by NBA & NAAC</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ICEAISC'26 - International Conference on Edge AI, Intelligent Analytics, and Smart Computing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+        
+        // Add smooth scroll to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add active class to current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.main-nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+        
+        // Add loading animation for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+                this.style.transition = 'opacity 0.5s ease';
+            });
+            
+            if (img.complete) {
+                img.style.opacity = '1';
+            } else {
+                img.style.opacity = '0';
+            }
+        });
+    </script>
+</body>
+</html>

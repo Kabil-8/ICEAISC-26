@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Guidelines | ICEAISC'26</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS Starts Here -->
+    <style>
+        /* ===== CSS RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #4da6ff, #0066cc);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #2c5282;
+            margin: 20px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #004d99;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .conference-name {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 2rem;
+        }
+        
+        .main-nav a {
+            color: #333;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0066cc;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #0066cc;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0066cc;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-content h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #4da6ff, #ff7e5f);
+        }
+        
+        .hero-content .location {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 0;
+        }
+        
+        /* ===== MAIN CONTENT SECTIONS ===== */
+        main {
+            padding: 60px 0;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .content-section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-section:nth-child(even) {
+            background: linear-gradient(to right, #f8f9fa, white);
+        }
+        
+        /* ===== IMPORTANT NOTICE BOX ===== */
+        .content-section > div:first-child {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff9800;
+            margin-bottom: 30px;
+            animation: noticePulse 3s infinite;
+        }
+        
+        @keyframes noticePulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(255, 152, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(255, 152, 0, 0.3);
+            }
+        }
+        
+        .content-section > div:first-child h3 {
+            color: #ff6f00;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section > div:first-child i {
+            color: #ff6f00;
+            font-size: 1.5rem;
+        }
+        
+        /* ===== LISTS STYLING ===== */
+        ul, ol {
+            margin: 20px 0 25px 20px;
+            padding-left: 20px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        ul li {
+            position: relative;
+            padding: 8px 0 8px 35px;
+            margin-bottom: 5px;
+        }
+        
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #4da6ff, #0066cc);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        ol {
+            counter-reset: item;
+            list-style: none;
+        }
+        
+        ol li {
+            position: relative;
+            padding: 12px 0 12px 45px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f5f7fa, #e4eaf2);
+            border-radius: 8px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        ol li::before {
+            counter-increment: item;
+            content: counter(item);
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #0066cc, #4da6ff);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0, 102, 204, 0.2);
+        }
+        
+        /* ===== CTA BUTTON ===== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(to right, #003366, #004d99);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.6);
+            color: white;
+        }
+        
+        /* ===== REGISTRATION TABLE ===== */
+        .registration-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .registration-table thead {
+            background: linear-gradient(135deg, #0066cc, #004d99);
+            color: white;
+        }
+        
+        .registration-table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #004d99;
+        }
+        
+        .registration-table tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .registration-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .registration-table tbody tr:hover {
+            background-color: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .registration-table td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .registration-table td:first-child {
+            font-weight: 500;
+            color: #1a365d;
+        }
+        
+        .registration-table td:nth-child(2) {
+            font-weight: 700;
+            color: #0066cc;
+            font-size: 1.1rem;
+        }
+        
+        /* ===== NOTE BOX ===== */
+        .content-section > div:nth-child(2) {
+            background: linear-gradient(135deg, #409fde, #e1f5fe);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        /* ===== DISCLAIMER BOX ===== */
+        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] {
+            background: linear-gradient(135deg, #ffc0c9, #ffcdd2) !important;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #f44336;
+            animation: disclaimerPulse 3s infinite;
+        }
+        
+        @keyframes disclaimerPulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(244, 67, 54, 0.2);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(244, 67, 54, 0.3);
+            }
+        }
+        
+        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] h3 {
+            color: #d32f2f;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] i {
+            color: #d32f2f;
+            font-size: 1.5rem;
+        }
+        
+        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] ul li::before {
+            content: "⚠";
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+        }
+        
+        /* ===== SUBMISSION CALL TO ACTION ===== */
+        .content-section > div:last-child {
+            background: linear-gradient(135deg, #003366, #004d99);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-section > div:last-child::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+        }
+        
+        .content-section > div:last-child > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-section > div:last-child h3 {
+            color: white;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .content-section > div:last-child p:nth-child(4) {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #4da6ff;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        /* ===== SECTION TITLE CENTERING ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #4da6ff;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+        
+        .footer-section i {
+            color: #4da6ff;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+            
+            .registration-table th,
+            .registration-table td {
+                padding: 12px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .registration-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .content-section > div:last-child {
+                padding: 25px 15px;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-section {
+                padding: 25px 20px;
+            }
+            
+            ul li, ol li {
+                padding-left: 40px;
+            }
+            
+            ol li::before {
+                left: 5px;
+                width: 25px;
+                height: 25px;
+            }
+            
+            .registration-table th,
+            .registration-table td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        /* ===== ADDITIONAL ENHANCEMENTS ===== */
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0066cc, #4da6ff);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #004d99, #0066cc);
+        }
+        
+        /* Print styles */
+        @media print {
+            .menu-toggle, .hero-content h2::after, .cta-button {
+                display: none;
+            }
+            
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
+            .hero {
+                background: white !important;
+                color: black;
+                padding: 20px 0;
+            }
+            
+            .hero-content h2 {
+                color: black;
+            }
+            
+            .content-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            
+            .registration-table {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            footer {
+                background: white !important;
+                color: black;
+            }
+            
+            .footer-section h3, .footer-section p {
+                color: black;
+            }
+        }
+        
+        /* Hover effect for content sections */
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient text effect for section titles */
+        .section-title {
+            background: linear-gradient(90deg, #0066cc, #4da6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 102, 204, 0.3);
+            border-radius: 50%;
+            border-top-color: #0066cc;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Styling for inline strong elements */
+        strong {
+            color: #0066cc;
+            font-weight: 700;
+        }
+        
+        /* Responsive table adjustments */
+        @media (max-width: 480px) {
+            .registration-table {
+                font-size: 0.85rem;
+            }
+            
+            .registration-table th,
+            .registration-table td {
+                padding: 8px 6px;
+            }
+            
+            .content-section > div:last-child {
+                padding: 20px 10px;
+            }
+            
+            .content-section > div:last-child p:nth-child(4) {
+                font-size: 1.1rem;
+                padding: 10px;
+            }
+        }
+        
+        /* Animation for list items */
+        ul li, ol li {
+            animation: fadeInLeft 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+    <!-- Internal CSS Ends Here -->
+</head>
+<body>
+    <!-- Your HTML body content remains exactly the same -->
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <div class="header-banner">
+                    <div class="logo">
+                        <h1><span class="conference-name">ICEAISC'26</span></h1>
+                    </div>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="important-dates.html">Important Dates</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="venue.html">Venue</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>SUBMISSION GUIDELINES</h2>
+                <p class="location">Instructions for authors and paper submission</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Instructions -->
+        <section class="content-section">
+            <h2 class="section-title">Instructions to Authors</h2>
+            
+            <div style="background: linear-gradient(135deg, #fff8e1, #ffecb3); padding: 20px; border-radius: 8px; border-left: 5px solid #ff9800; margin-bottom: 25px;">
+                <h3><i class="fas fa-exclamation-circle"></i> Important Notice</h3>
+                <p>Original contributions of ongoing research work are expected from the authors. Papers will be reviewed by experts and selected based on novelty and technical content.</p>
+            </div>
+            
+            <h3>Paper Format Requirements</h3>
+            <ul style="margin: 15px 0 25px 0;">
+                <li>Papers must be in <strong>IEEE format</strong></li>
+                <li>Maximum length: <strong>6 pages</strong> (including references and appendices)</li>
+                <li>Submitted as soft-copy (PDF format recommended)</li>
+                <li>Must include correspondence address, contact number and email address</li>
+                <li>All accepted papers must be presented orally by one of the authors</li>
+            </ul>
+            
+            <h3>Submission Process</h3>
+            <ol style="margin: 15px 0 25px 0;">
+                <li>Prepare your manuscript according to IEEE format (max 6 pages)</li>
+                <li>Ensure all author details and contact information are included</li>
+                <li>Send the complete paper as PDF attachment to: <strong>iceaisc26@gmail.com</strong></li>
+                <li>You will receive a confirmation email within 3 working days</li>
+                <li>Review process takes approximately 2-3 weeks</li>
+                <li>Notification of acceptance will be sent by March 14, 2026</li>
+            </ol>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" class="cta-button">
+                    <i class="fas fa-download"></i> Download IEEE Template
+                </a>
+            </div>
+        </section>
+
+        <!-- Registration -->
+        <section class="content-section">
+            <h2 class="section-title">Registration Particulars</h2>
+            
+            <p>Registration fee includes conference kit, certificate, access to all sessions and hospitality. Accommodation will be arranged on prior request at nominal charges.</p>
+            
+            <table class="registration-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Registration Fee</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>U.G/P.G. Students / Research Scholars</td>
+                        <td>Rs. 7,000</td>
+                        <td>Valid student ID required</td>
+                    </tr>
+                    <tr>
+                        <td>Academicians</td>
+                        <td>Rs. 8,000</td>
+                        <td>Faculty members from institutions</td>
+                    </tr>
+                    <tr>
+                        <td>Industry Delegates</td>
+                        <td>Rs. 9,000</td>
+                        <td>Professionals from industry</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="background: linear-gradient(135deg, #7db9e1, #e1f5fe); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                <p><strong>Note:</strong> Authors with multiple accepted papers are required to register separately for each paper to ensure inclusion in the conference proceedings and schedule.</p>
+            </div>
+        </section>
+
+        <!-- Important Notes -->
+        <section class="content-section">
+            <h2 class="section-title">Author Responsibilities</h2>
+            
+            <div style="background: linear-gradient(135deg, #ffebee, #ffcdd2); padding: 20px; border-radius: 8px; border-left: 5px solid #f44336;">
+                <h3><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h3>
+                <p>The Author(s) is solely responsible for:</p>
+                <ul style="margin-top: 10px;">
+                    <li>Any work quality issues, citation, or self-citation issues</li>
+                    <li>Mismatched content issues</li>
+                    <li>Review and revision process delays</li>
+                    <li>Not responding to review comments</li>
+                    <li>Copyright issues and proofread response delays</li>
+                    <li>Rejection from the organizers or publishers</li>
+                </ul>
+                <p style="margin-top: 15px; font-weight: bold;">There is no registration payment that will be refunded in any stage of the conference pre/post process.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <div style="background: linear-gradient(135deg, #003366, #004d99); color: white; padding: 25px; border-radius: 8px;">
+                    <h3>Ready to Submit?</h3>
+                    <p>Send your original manuscript to:</p>
+                    <p style="font-size: 1.3rem; font-weight: bold; margin: 15px 0;">iceaisc26@gmail.com</p>
+                    <p>For any submission-related queries, contact Mr. K. Prabhu at +91 8610018853</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ICEAISC'26</h3>
+                    <p>International Conference on Edge AI, Intelligent Analytics, and Smart Computing</p>
+                    <p>March 26-27, 2026</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology, Pollachi, Tamil Nadu, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> iceaisc26@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8610018853</p>
+                    <p><i class="fas fa-user"></i> Mr. K. Prabhu (Organizing Secretary)</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Organized By</h3>
+                    <p>Department of Computer Science and Engineering</p>
+                    <p>Dr. Mahalingam College of Engineering and Technology</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ICEAISC'26. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+        
+        // Add smooth scroll to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    
+                    // Animate list items with delay
+                    const listItems = entry.target.querySelectorAll('li');
+                    listItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                    });
+                    
+                    // Animate table rows
+                    const tableRows = entry.target.querySelectorAll('tbody tr');
+                    tableRows.forEach((row, index) => {
+                        row.style.animationDelay = `${index * 0.1}s`;
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateX(-20px)';
+                        setTimeout(() => {
+                            row.style.transition = 'all 0.5s ease';
+                            row.style.opacity = '1';
+                            row.style.transform = 'translateX(0)';
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add active class to current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.main-nav a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+        
+        // Add click effect for CTA button
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', function(e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.5);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${y}px;
+                        left: ${x}px;
+                    `;
+                    
+                    this.appendChild(ripple);
+                    
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            }
+            
+            // Add hover effects to table rows
+            const tableRows = document.querySelectorAll('.registration-table tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px) scale(1.01)';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0) scale(1)';
+                });
+            });
+        });
+        
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
