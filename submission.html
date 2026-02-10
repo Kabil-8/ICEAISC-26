@@ -35,57 +35,7 @@
             padding: 0 20px;
         }
         
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #1a365d;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, #4da6ff, #0066cc);
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: #2c5282;
-            margin: 20px 0 15px;
-            padding-left: 15px;
-            border-left: 4px solid #4da6ff;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0066cc;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: #004d99;
-        }
-         /* ===== HEADER & NAVIGATION ===== */
+        /* ===== HEADER & NAVIGATION WITH LOGO ===== */
         header {
             background-color: #fff;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -110,12 +60,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 10px 0;
         }
         
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .college-logo {
+            height: 70px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .college-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .conference-info {
+            display: flex;
+            flex-direction: column;
         }
         
         .conference-name {
@@ -124,6 +90,15 @@
             background-clip: text;
             color: transparent;
             font-weight: 800;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .conference-full-name {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+            margin-top: 3px;
         }
         
         .main-nav ul {
@@ -132,7 +107,7 @@
         }
         
         .main-nav li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         .main-nav a {
@@ -140,6 +115,7 @@
             font-weight: 500;
             padding: 5px 0;
             position: relative;
+            font-size: 0.95rem;
         }
         
         .main-nav a::after {
@@ -168,7 +144,123 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #0066cc;
-        }     
+        }
+        
+        /* ===== RESPONSIVE DESIGN FOR HEADER ===== */
+        @media screen and (max-width: 992px) {
+            .conference-name {
+                font-size: 1.3rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.75rem;
+            }
+            
+            .college-logo {
+                height: 60px;
+            }
+            
+            .main-nav li {
+                margin-left: 1.2rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .college-logo {
+                height: 55px;
+            }
+            
+            .conference-name {
+                font-size: 1.1rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .main-header {
+                padding: 8px 0;
+            }
+            
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .college-logo {
+                height: 50px;
+            }
+            
+            .conference-name {
+                font-size: 1rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .college-logo {
+                height: 45px;
+            }
+            
+            .conference-name {
+                font-size: 0.9rem;
+            }
+            
+            .conference-full-name {
+                display: none; /* Hide full name on very small screens */
+            }
+        }
+        
         /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
@@ -178,7 +270,6 @@
             overflow: hidden;
             text-align: center;
         }
-        
         .hero::before {
             content: '';
             position: absolute;
@@ -240,7 +331,7 @@
         }
         
         /* ===== IMPORTANT NOTICE BOX ===== */
-        .content-section > div:first-child {
+        .notice-box {
             background: linear-gradient(135deg, #fff8e1, #ffecb3);
             padding: 25px;
             border-radius: 12px;
@@ -258,7 +349,7 @@
             }
         }
         
-        .content-section > div:first-child h3 {
+        .notice-box h3 {
             color: #ff6f00;
             border-left: none;
             padding-left: 0;
@@ -267,8 +358,41 @@
             gap: 10px;
         }
         
-        .content-section > div:first-child i {
+        .notice-box i {
             color: #ff6f00;
+            font-size: 1.5rem;
+        }
+
+        /* ===== PAPER FORMAT BOX ===== */
+        .format-box {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #0288d1;
+            margin: 30px 0;
+            animation: formatPulse 3s infinite;
+        }
+        
+        @keyframes formatPulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(2, 136, 209, 0.2);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(2, 136, 209, 0.3);
+            }
+        }
+        
+        .format-box h3 {
+            color: #0277bd;
+            border-left: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .format-box i {
+            color: #0277bd;
             font-size: 1.5rem;
         }
 
@@ -407,8 +531,8 @@
         }
         
         /* ===== NOTE BOX ===== */
-        .content-section > div:nth-child(2) {
-            background: linear-gradient(135deg, #409fde, #e1f5fe);
+        .note-box {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -416,11 +540,12 @@
         }
         
         /* ===== DISCLAIMER BOX ===== */
-        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] {
-            background: linear-gradient(135deg, #ffc0c9, #ffcdd2) !important;
+        .disclaimer-box {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
             padding: 25px;
             border-radius: 12px;
             border-left: 5px solid #f44336;
+            margin-bottom: 30px;
             animation: disclaimerPulse 3s infinite;
         }
         
@@ -433,7 +558,7 @@
             }
         }
         
-        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] h3 {
+        .disclaimer-box h3 {
             color: #d32f2f;
             border-left: none;
             padding-left: 0;
@@ -442,18 +567,18 @@
             gap: 10px;
         }
         
-        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] i {
+        .disclaimer-box i {
             color: #d32f2f;
             font-size: 1.5rem;
         }
         
-        .content-section > div:nth-child(1)[style*="background-color: #ffebee"] ul li::before {
+        .disclaimer-box ul li::before {
             content: "⚠";
             background: linear-gradient(135deg, #f44336, #d32f2f);
         }
         
         /* ===== SUBMISSION CALL TO ACTION ===== */
-        .content-section > div:last-child {
+        .submission-cta {
             background: linear-gradient(135deg, #003366, #004d99);
             color: white;
             padding: 35px;
@@ -464,7 +589,7 @@
             overflow: hidden;
         }
         
-        .content-section > div:last-child::before {
+        .submission-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -475,12 +600,12 @@
             opacity: 0.1;
         }
         
-        .content-section > div:last-child > * {
+        .submission-cta > * {
             position: relative;
             z-index: 1;
         }
         
-        .content-section > div:last-child h3 {
+        .submission-cta h3 {
             color: white;
             border-left: none;
             padding-left: 0;
@@ -488,7 +613,7 @@
             margin-bottom: 15px;
         }
         
-        .content-section > div:last-child p:nth-child(4) {
+        .submission-cta p:nth-child(3) {
             font-size: 1.3rem;
             font-weight: bold;
             margin: 15px 0;
@@ -659,7 +784,7 @@
                 text-align: center;
             }
             
-            .content-section > div:last-child {
+            .submission-cta {
                 padding: 25px 15px;
             }
         }
@@ -828,11 +953,11 @@
                 padding: 8px 6px;
             }
             
-            .content-section > div:last-child {
+            .submission-cta {
                 padding: 20px 10px;
             }
             
-            .content-section > div:last-child p:nth-child(4) {
+            .submission-cta p:nth-child(3) {
                 font-size: 1.1rem;
                 padding: 10px;
             }
@@ -855,25 +980,31 @@
     <!-- Internal CSS Ends Here -->
 </head>
 <body>
-    <!-- Your HTML body content remains exactly the same -->
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <div class="main-header">
-                <div class="header-banner">
-                    <div class="logo">
-                        <h1><span class="conference-name">ICEAISC'26</span></h1>
+                <div class="logo-container">
+                    <!-- Logo Image -->
+                    <img src="images/logo.png" alt="Dr. Mahalingam College of Engineering and Technology" class="college-logo">
+                    
+                    <!-- Conference Info -->
+                    <div class="conference-info">
+                        <h1 class="conference-name">ICEAISC'26</h1>
+                        <p class="conference-full-name">International Conference on Edge AI, Intelligent Analytics & Smart Computing</p>
                     </div>
                 </div>
+                
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
+                
                 <nav class="main-nav" id="mainNav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="committee.html">Committee</a></li>
                         <li><a href="call-for-papers.html">Call for Papers</a></li>
-                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="submission.html" class="active">Submission</a></li>
                         <li><a href="important-dates.html">Important Dates</a></li>
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="venue.html">Venue</a></li>
@@ -900,32 +1031,34 @@
         <section class="content-section">
             <h2 class="section-title">Instructions to Authors</h2>
             
-            <div style="background: linear-gradient(135deg, #fff8e1, #ffecb3); padding: 20px; border-radius: 8px; border-left: 5px solid #ff9800; margin-bottom: 25px;">
+            <div class="notice-box">
                 <h3><i class="fas fa-exclamation-circle"></i> Important Notice</h3>
                 <p>Original contributions of ongoing research work are expected from the authors. Papers will be reviewed by experts and selected based on novelty and technical content.</p>
             </div>
             
-            <h3>Paper Format Requirements</h3>
-            <ul style="margin: 15px 0 25px 0;">
-                <li>Papers must be in <strong>IEEE format</strong></li>
-                <li>Maximum length: <strong>6 pages</strong> (including references and appendices)</li>
-                <li>Submitted as soft-copy (docx format recommended)</li>
-                <li>Must include correspondence address, contact number and email address</li>
-                <li>All accepted papers must be presented orally by one of the authors</li>
-            </ul>
+            <!-- Paper Format Requirements Box -->
+            <div class="format-box">
+                <h3><i class="fas fa-file-alt"></i> Paper Format Requirements</h3>
+                <ul style="margin: 15px 0;">
+                    <li>Papers must be in <strong>IEEE format</strong></li>
+                    <li>Maximum length: <strong>6 pages</strong> (including references and appendices)</li>
+                    <li>Submitted as soft-copy (docx format recommended)</li>
+                    <li>Must include correspondence address, contact number and email address</li>
+                    <li>All accepted papers must be presented orally by one of the authors</li>
+                </ul>
+            </div>
             
             <h3>Submission Process</h3>
             <ol style="margin: 15px 0 25px 0;">
                 <li>Prepare your manuscript according to IEEE format (max 6 pages)</li>
                 <li>Ensure all author details and contact information are included</li>
                 <li>Send the complete paper as docx attachment to: <strong>iceaisc26@gmail.com</strong></li>
-                <li>You will receive a confirmation email within 3 working days</li>
                 <li>Review process takes approximately 2-3 weeks</li>
                 <li>Notification of acceptance will be sent by March 14, 2026</li>
             </ol>
             
             <div style="text-align: center; margin: 30px 0;">
-                <a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" class="cta-button">
+                <a href="conference-template-a4.docx" target="_blank" class="cta-button">
                     <i class="fas fa-download"></i> Download IEEE Template
                 </a>
             </div>
@@ -964,7 +1097,7 @@
                 </tbody>
             </table>
             
-            <div style="background: linear-gradient(135deg, #7db9e1, #e1f5fe); padding: 15px; border-radius: 8px; margin-top: 20px;">
+            <div class="note-box">
                 <p><strong>Note:</strong> Authors with multiple accepted papers are required to register separately for each paper to ensure inclusion in the conference proceedings and schedule.</p>
             </div>
         </section>
@@ -973,7 +1106,7 @@
         <section class="content-section">
             <h2 class="section-title">Author Responsibilities</h2>
             
-            <div style="background: linear-gradient(135deg, #ffebee, #ffcdd2); padding: 20px; border-radius: 8px; border-left: 5px solid #f44336;">
+            <div class="disclaimer-box">
                 <h3><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h3>
                 <p>The Author(s) is solely responsible for:</p>
                 <ul style="margin-top: 10px;">
@@ -988,10 +1121,10 @@
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
-                <div style="background: linear-gradient(135deg, #003366, #004d99); color: white; padding: 25px; border-radius: 8px;">
+                <div class="submission-cta">
                     <h3>Ready to Submit?</h3>
                     <p>Send your original manuscript to:</p>
-                    <p style="font-size: 1.3rem; font-weight: bold; margin: 15px 0;">iceaisc26@gmail.com</p>
+                    <p>iceaisc26@gmail.com</p>
                     <p>For any submission-related queries, contact Mr. K. Prabhu at +91 8610018853</p>
                 </div>
             </div>

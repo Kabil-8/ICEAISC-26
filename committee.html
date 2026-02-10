@@ -9,7 +9,7 @@
     
     <!-- Internal CSS Starts Here -->
     <style>
-        /* ===== CSS RESET & GLOBAL STYLES ===== */
+         /* ===== CSS RESET & GLOBAL STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -35,54 +35,7 @@
             padding: 0 20px;
         }
         
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #1a365d;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, #4da6ff, #0066cc);
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0066cc;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: #004d99;
-        }
-        
-        /* ===== HEADER & NAVIGATION ===== */
+        /* ===== HEADER & NAVIGATION WITH LOGO ===== */
         header {
             background-color: #fff;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -107,12 +60,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 10px 0;
         }
         
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .college-logo {
+            height: 70px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .college-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .conference-info {
+            display: flex;
+            flex-direction: column;
         }
         
         .conference-name {
@@ -121,6 +90,15 @@
             background-clip: text;
             color: transparent;
             font-weight: 800;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .conference-full-name {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+            margin-top: 3px;
         }
         
         .main-nav ul {
@@ -129,7 +107,7 @@
         }
         
         .main-nav li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         .main-nav a {
@@ -137,6 +115,7 @@
             font-weight: 500;
             padding: 5px 0;
             position: relative;
+            font-size: 0.95rem;
         }
         
         .main-nav a::after {
@@ -167,6 +146,121 @@
             color: #0066cc;
         }
         
+        /* ===== RESPONSIVE DESIGN FOR HEADER ===== */
+        @media screen and (max-width: 992px) {
+            .conference-name {
+                font-size: 1.3rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.75rem;
+            }
+            
+            .college-logo {
+                height: 60px;
+            }
+            
+            .main-nav li {
+                margin-left: 1.2rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .college-logo {
+                height: 55px;
+            }
+            
+            .conference-name {
+                font-size: 1.1rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .main-header {
+                padding: 8px 0;
+            }
+            
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .college-logo {
+                height: 50px;
+            }
+            
+            .conference-name {
+                font-size: 1rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .college-logo {
+                height: 45px;
+            }
+            
+            .conference-name {
+                font-size: 0.9rem;
+            }
+            
+            .conference-full-name {
+                display: none; /* Hide full name on very small screens */
+            }
+        }
+        
         /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
@@ -176,7 +270,6 @@
             overflow: hidden;
             text-align: center;
         }
-        
         .hero::before {
             content: '';
             position: absolute;
@@ -226,6 +319,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
+            text-align: center;
         }
         
         .content-section.fade-in {
@@ -235,8 +329,9 @@
         
         /* ===== COMMITTEE GRID ===== */
         .committee-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
             margin-top: 30px;
         }
@@ -257,6 +352,7 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.6s ease-out forwards;
+            width: 300px;
         }
         
         @keyframes fadeInUp {
@@ -405,6 +501,7 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            text-align: left;
         }
         
         .footer-section h3::after {
@@ -420,6 +517,7 @@
         .footer-section p {
             margin-bottom: 15px;
             color: #cccccc;
+            text-align: left;
         }
         
         .footer-section i {
@@ -434,6 +532,10 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaaaaa;
             font-size: 0.9rem;
+        }
+        
+        .copyright p {
+            text-align: center;
         }
         
         /* ===== ANIMATIONS ===== */
@@ -462,8 +564,8 @@
                 font-size: 2rem;
             }
             
-            .committee-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            .committee-member {
+                width: 280px;
             }
         }
         
@@ -522,9 +624,8 @@
                 padding: 30px;
             }
             
-            .committee-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
+            .committee-member {
+                width: 250px;
             }
         }
         
@@ -549,11 +650,9 @@
                 padding: 25px 20px;
             }
             
-            .committee-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .committee-member {
+                width: 100%;
+                max-width: 300px;
                 padding: 25px 15px;
             }
             
@@ -567,20 +666,19 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            
+            .footer-section h3,
+            .footer-section p {
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
         
         /* ===== ADDITIONAL ENHANCEMENTS ===== */
-        /* Section title centering for committee page */
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
         /* Loading animation for committee cards */
         .committee-member {
             animation-delay: calc(var(--delay-index, 0) * 0.1s);
@@ -669,35 +767,46 @@
             opacity: 1;
         }
         
-        /* Responsive adjustments for committee grid */
-        @media (min-width: 1200px) {
-            .committee-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        /* Centering adjustment for odd number of cards */
+        .committee-grid {
+            justify-content: center;
         }
         
-        @media (min-width: 768px) and (max-width: 1199px) {
-            .committee-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* Ensure all headings are centered */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+            display: block;
+        }
+        
+        .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
     <!-- Internal CSS Ends Here -->
 </head>
 <body>
-    <!-- Your HTML body content remains exactly the same -->
     <!-- Header & Navigation -->
-    <header>
+<header>
         <div class="container">
             <div class="main-header">
-                <div class="header-banner">
-                    <div class="logo">
-                        <h1><span class="conference-name">ICEAISC'26</span></h1>
+                <div class="logo-container">
+                    <!-- Logo Image -->
+                    <img src="images/logo.png" alt="Dr. Mahalingam College of Engineering and Technology" class="college-logo">
+                    
+                    <!-- Conference Info -->
+                    <div class="conference-info">
+                        <h1 class="conference-name">ICEAISC'26</h1>
+                        <p class="conference-full-name">International Conference on Edge AI, Intelligent Analytics & Smart Computing</p>
                     </div>
                 </div>
+                
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
+                
                 <nav class="main-nav" id="mainNav">
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -707,7 +816,7 @@
                         <li><a href="important-dates.html">Important Dates</a></li>
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="venue.html">Venue</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" "">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -792,15 +901,7 @@
         <section class="content-section">
             <h2 class="section-title">Convener & Co-Convenors</h2>
             <div class="committee-grid">
-                <!-- Co-Convener 1 -->
-                <div class="committee-member">
-                    <div class="member-profile" data-initial="A"></div>
-                    <div class="member-details">
-                        <div class="member-role">Co-Convener</div>
-                        <h3 class="member-name">Dr. A. Noble Mary Juliet</h3>
-                        <p class="member-affiliation">Professor, CSE, MCET</p>
-                    </div>
-                </div>
+
                 <!-- Convener -->
                 <div class="committee-member">
                     <div class="member-profile" data-initial="D"></div>
@@ -810,7 +911,17 @@
                         <p class="member-affiliation">Professor & HoD/CSE, MCET</p>
                     </div>
                 </div>
-                
+
+                <!-- Co-Convener 1 -->
+                <div class="committee-member">
+                    <div class="member-profile" data-initial="A"></div>
+                    <div class="member-details">
+                        <div class="member-role">Co-Convener</div>
+                        <h3 class="member-name">Dr. A. Noble Mary Juliet</h3>
+                        <p class="member-affiliation">Professor, CSE, MCET</p>
+                    </div>
+                </div>
+                                
                 <!-- Co-Convener 2 -->
                 <div class="committee-member">
                     <div class="member-profile" data-initial="J"></div>

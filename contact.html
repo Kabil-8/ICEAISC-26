@@ -9,7 +9,7 @@
     
     <!-- Internal CSS Starts Here -->
     <style>
-        /* ===== CSS RESET & GLOBAL STYLES ===== */
+          /* ===== CSS RESET & GLOBAL STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -35,64 +35,7 @@
             padding: 0 20px;
         }
         
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #1a365d;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, #4da6ff, #0066cc);
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: #2c5282;
-            margin: 20px 0 15px;
-            padding-left: 15px;
-            border-left: 4px solid #4da6ff;
-        }
-        
-        h4 {
-            font-size: 1.2rem;
-            color: #003366;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0066cc;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: #004d99;
-        }
-        
-        /* ===== HEADER & NAVIGATION ===== */
+        /* ===== HEADER & NAVIGATION WITH LOGO ===== */
         header {
             background-color: #fff;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -117,12 +60,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 10px 0;
         }
         
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .college-logo {
+            height: 70px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .college-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .conference-info {
+            display: flex;
+            flex-direction: column;
         }
         
         .conference-name {
@@ -131,6 +90,15 @@
             background-clip: text;
             color: transparent;
             font-weight: 800;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .conference-full-name {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+            margin-top: 3px;
         }
         
         .main-nav ul {
@@ -139,7 +107,7 @@
         }
         
         .main-nav li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         .main-nav a {
@@ -147,6 +115,7 @@
             font-weight: 500;
             padding: 5px 0;
             position: relative;
+            font-size: 0.95rem;
         }
         
         .main-nav a::after {
@@ -175,6 +144,121 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #0066cc;
+        }
+        
+        /* ===== RESPONSIVE DESIGN FOR HEADER ===== */
+        @media screen and (max-width: 992px) {
+            .conference-name {
+                font-size: 1.3rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.75rem;
+            }
+            
+            .college-logo {
+                height: 60px;
+            }
+            
+            .main-nav li {
+                margin-left: 1.2rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .main-nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active i::before {
+                content: "\f00d";
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .college-logo {
+                height: 55px;
+            }
+            
+            .conference-name {
+                font-size: 1.1rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .main-header {
+                padding: 8px 0;
+            }
+            
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .college-logo {
+                height: 50px;
+            }
+            
+            .conference-name {
+                font-size: 1rem;
+            }
+            
+            .conference-full-name {
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .college-logo {
+                height: 45px;
+            }
+            
+            .conference-name {
+                font-size: 0.9rem;
+            }
+            
+            .conference-full-name {
+                display: none; /* Hide full name on very small screens */
+            }
         }
         
         /* ===== HERO SECTION ===== */
@@ -846,48 +930,77 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        
+        /* Phone number styling */
+        .phone-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .phone-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .phone-item i {
+            color: #0066cc;
+            margin-right: 8px;
+            font-size: 1rem;
+        }
     </style>
     <!-- Internal CSS Ends Here -->
 </head>
 <body>
-    <!-- Your HTML body content remains exactly the same -->
     <!-- Header & Navigation -->
 <header>
-    <div class="container">
-        <div class="main-header">
-            <div class="header-banner">
-                <div class="logo">
-                    <h1><span class="conference-name">ICEAISC'26</span></h1>
+        <div class="container">
+            <div class="main-header">
+                <div class="logo-container">
+                    <!-- Logo Image -->
+                    <img src="images/logo.png" alt="Dr. Mahalingam College of Engineering and Technology" class="college-logo">
+                    
+                    <!-- Conference Info -->
+                    <div class="conference-info">
+                        <h1 class="conference-name">ICEAISC'26</h1>
+                        <p class="conference-full-name">International Conference on Edge AI, Intelligent Analytics & Smart Computing</p>
+                    </div>
                 </div>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="important-dates.html">Important Dates</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="venue.html">Venue</a></li>
+                        <li><a href="contact.html" "">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="committee.html">Committee</a></li>
-                    <li><a href="call-for-papers.html">Call for Papers</a></li>
-                    <li><a href="submission.html">Submission</a></li>
-                    <li><a href="important-dates.html">Important Dates</a></li>
-                    <li><a href="publication.html">Publication</a></li>
-                    <li><a href="venue.html">Venue</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Page Title -->
     <section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h2>CONTACT US</h2>
-            <p class="location">Get in touch with the organizing committee</p>
+        <div class="container">
+            <div class="hero-content">
+                <h2>CONTACT US</h2>
+                <p class="location">Get in touch with the organizing committee</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Main Content -->
     <main class="container">
@@ -898,18 +1011,31 @@
             <div class="two-columns">
                 <div>
                     <div style="background: linear-gradient(135deg, #f0f9ff, #e1f5fe); padding: 25px; border-radius: 8px; height: 100%; border-left: 5px solid #003366;">
-                        <h3>Organizing Secretary</h3>
-                        <p><strong>Mr. K. Prabhu</strong></p>
-                        <p>Assistant Professor (SS)</p>
+                        <h3>Conference Secretariat</h3>
+                        <p>ICEAISC'26 Organizing Committee</p>
                         <p>Department of Computer Science and Engineering</p>
                         <p>Dr. Mahalingam College of Engineering and Technology</p>
-                        <p>Pollachi - 642003</p>
-                        <p>Coimbatore District, Tamilnadu, India</p>
+                        <p>Udamali Road, M.K.Patti (P.O)</p>
+                        <p>Pollachi - 642003, Tamil Nadu, India</p>
                         
                         <div style="margin-top: 25px;">
-                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> prabhu@drmcet.ac.in</p>
-                            <p><i class="fas fa-mobile-alt"></i> <strong>Mobile:</strong> +91 8610018853</p>
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> prabhu@drmcet.ac.in , bavi@drmcet.ac.in</p>
                             <p><i class="fas fa-envelope"></i> <strong>Conference Email:</strong> iceaisc26@gmail.com</p>
+                            
+                            <div class="phone-numbers">
+                                <div class="phone-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>+91 99422 37029</span>
+                                </div>
+                                <div class="phone-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>+91 89460 32023</span>
+                                </div>
+                                <div class="phone-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>+91 86100 18853</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -924,9 +1050,10 @@
                         <p>Pollachi - 642 003, Tamil Nadu, India</p>
                         
                         <div style="margin-top: 25px;">
-                            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 4259 236030 / 40 / 50</p>
+                            <p><i class="fas fa-phone"></i> <strong>Office Phone:</strong> +91 4259 236030 / 40 / 50</p>
                             <p><i class="fas fa-fax"></i> <strong>Fax:</strong> 04259 - 236070</p>
                             <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="http://www.drmcet.ac.in" target="_blank">www.drmcet.ac.in</a></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Campus Location:</strong> 15 km from Pollachi town, on Pollachi to Palani route</p>
                         </div>
                     </div>
                 </div>
@@ -957,9 +1084,14 @@
                     <h4>4. Can I submit multiple papers?</h4>
                     <p>Yes, you can submit multiple papers. However, authors with multiple accepted papers are required to register separately for each paper to ensure inclusion in the conference proceedings and schedule.</p>
                 </div>
+                
+                <div>
+                    <h4>5. How can I contact the organizing committee?</h4>
+                    <p>You can reach the organizing committee through the contact numbers provided above or by email at <strong>iceaisc26@gmail.com</strong>. The committee is available during business hours on weekdays.</p>
+                </div>
             </div>
             
-            <p style="text-align: center; margin-top: 30px;">For more questions, please refer to the <a href="submission.html">submission guidelines</a> or contact us directly.</p>
+            <p style="text-align: center; margin-top: 30px;">For more questions, please refer to the <a href="submission.html">submission guidelines</a> or contact us directly using the information above.</p>
         </section>
     </main>
 
@@ -976,13 +1108,15 @@
                 <div class="footer-section">
                     <h3>Quick Contact</h3>
                     <p><i class="fas fa-envelope"></i> iceaisc26@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +91 8610018853</p>
-                    <p><i class="fas fa-user"></i> Mr. K. Prabhu</p>
+                    <p><i class="fas fa-phone"></i> +91 99422 37029</p>
+                    <p><i class="fas fa-phone"></i> +91 89460 32023</p>
+                    <p><i class="fas fa-phone"></i> +91 86100 18853</p>
                 </div>
                 <div class="footer-section">
                     <h3>Organized By</h3>
                     <p>Department of Computer Science and Engineering</p>
                     <p>Dr. Mahalingam College of Engineering and Technology</p>
+                    <p>(An Autonomous Institution, Accredited by NBA & NAAC)</p>
                 </div>
             </div>
             <div class="copyright">
@@ -1090,52 +1224,6 @@
             }
         });
         
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Validate form
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Show loading state
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
-            submitButton.innerHTML = '<span class="loading"></span> Sending...';
-            submitButton.disabled = true;
-            
-            // In a real implementation, this would send data to a server
-            // For this example, we'll simulate an API call
-            setTimeout(function() {
-                // Show success message
-                document.getElementById('formMessage').style.display = 'block';
-                document.getElementById('contactForm').reset();
-                
-                // Reset button
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-                
-                // Scroll to success message
-                document.getElementById('formMessage').scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'nearest'
-                });
-                
-                // Hide message after 8 seconds
-                setTimeout(function() {
-                    document.getElementById('formMessage').style.display = 'none';
-                }, 8000);
-            }, 1500);
-        });
-        
         // Add interactive effects
         document.addEventListener('DOMContentLoaded', function() {
             // Add hover effect for contact cards
@@ -1162,61 +1250,24 @@
                 });
             });
             
-            // Form field focus effects
-            const formFields = document.querySelectorAll('input, select, textarea');
-            formFields.forEach(field => {
-                field.addEventListener('focus', function() {
-                    this.parentElement.style.transform = 'translateY(-2px)';
-                });
-                
-                field.addEventListener('blur', function() {
-                    this.parentElement.style.transform = 'translateY(0)';
+            // Add click effect for phone numbers to copy functionality
+            const phoneItems = document.querySelectorAll('.phone-item');
+            phoneItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const phoneNumber = this.querySelector('span').textContent;
+                    navigator.clipboard.writeText(phoneNumber).then(() => {
+                        // Show copied feedback
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        this.style.background = 'rgba(46, 204, 113, 0.2)';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.background = 'rgba(255, 255, 255, 0.8)';
+                        }, 2000);
+                    });
                 });
             });
-            
-            // Add real-time form validation
-            document.getElementById('email').addEventListener('input', function() {
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (this.value && !emailPattern.test(this.value)) {
-                    this.style.borderColor = '#ff6b6b';
-                    this.style.boxShadow = '0 0 0 3px rgba(255, 107, 107, 0.2)';
-                } else if (this.value) {
-                    this.style.borderColor = '#51cf66';
-                    this.style.boxShadow = '0 0 0 3px rgba(81, 207, 102, 0.2)';
-                }
-            });
-            
-            // Add click effect for CTA button
-            const ctaButton = document.querySelector('#contactForm .cta-button');
-            if (ctaButton) {
-                ctaButton.addEventListener('click', function(e) {
-                    // Create ripple effect
-                    const ripple = document.createElement('span');
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    
-                    ripple.style.cssText = `
-                        position: absolute;
-                        border-radius: 50%;
-                        background: rgba(255, 255, 255, 0.5);
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        width: ${size}px;
-                        height: ${size}px;
-                        top: ${y}px;
-                        left: ${x}px;
-                    `;
-                    
-                    this.appendChild(ripple);
-                    
-                    // Remove ripple after animation
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 600);
-                });
-            }
         });
         
         // Add CSS for ripple effect
@@ -1227,6 +1278,14 @@
                     transform: scale(4);
                     opacity: 0;
                 }
+            }
+            .phone-item {
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .phone-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
         `;
         document.head.appendChild(style);
